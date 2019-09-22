@@ -1,33 +1,40 @@
-//to be updated 
-//doesnt pass all the test cases 
-// segmentation error
-
-#include<stdio.h>
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int main(){
-
-    long long int b;
-    long long int n,m;
-    scanf("%lld%lld%lld" , &b , &n , &m);
-    long long int a1[n];
-    long long int a2[m];
-    for( int i=0 ; i<m ; i++){
-        scanf("%lld" , &a1[i]);
+    long long int b,nk,nu;
+    scanf("%lld %lld %lld",&b,&nk,&nu);
+    long long int k[nk];
+    long long int u[nu];
+    for(long long int i=0;i<nk;i++){
+        scanf("%lld",&k[i]);
     }
-    for( int i=0 ; i<n ; i++){
-        scanf("%lld" , &a2[i]);
+    for(long long int i=0;i<nu;i++){
+        scanf("%lld",&u[i]);
     }
-    long long int max=-1;
-    for( int i=0 ; i<n ; i++){
-        for(int j=0 ; j<m ; j++){
-            if((a1[i]+a2[j]>max) && (a1[i]+a2[j]<=b)){
-                max = a1[i]+a2[j];
+    long long int sum=0,x=0;
+    long long int *a;
+    a = (long long int*) malloc(1000000 * sizeof(long long int));
+    for(long long int i=0;i<nk;i++){
+        for(long long int j=0;j<nu;j++){
+            sum=k[i]+u[j];
+            if(b>=sum){
+                a[x]=sum;
+                x++;
             }
+            
         }
     }
-    printf("%lld" , max);
-
-
-    return 0;
+    long long int m=a[0];
+    for(long long int i=0;i<x;i++){
+        if(a[i]>m){
+            m=a[i];
+        }
+    }
+    if(m>0 && m<=b){
+        printf("%lld",m);
+    }else{
+        printf("%d",-1);
+    }
 }
