@@ -5,11 +5,14 @@ I should mention that none of these solutions are written with respect to best S
 This repostiory also features some good implementations for advanced data structures and algorithms like - persistent segment trees, implict treaps, heavy light decomposition, centroid decomposition, suffix automaton etc.
 
 Hackerrank
+
 The Hackerrank directory contains solutions for problems on Hackerrank - a competitive progrmming website. Most of the solutions are of implementation problems as of now.
 
 Codechef
+
 solutions to problems from the onlie competitive coding platform codechef.
 The reposotory contains my solutions to various implementation problems ranging across many difficulty levels.
 
 SPOJ
+
 solutions to problems from the sphere online judge.
