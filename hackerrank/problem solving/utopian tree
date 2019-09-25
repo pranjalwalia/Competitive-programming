@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+
+int height(int n){
+
+        int i=1;
+        int h=1;
+        while(i<=n){
+        if(i%2==0){
+        h++;
+        }
+        else{
+        h*=2;
+        }
+        i++;
+        }
+        return h;
+
+}
+
+int main(){
+        int t;
+        scanf("%d" , &t);
+        int arr[t];
+        for(int i=0 ; i<t ; i++){
+        scanf("%d" , &arr[i]);
+        }
+        for( int i=0 ; i<t ; i++){
+        printf("%d\n" , height(arr[i]));
+        }
+        return 0;
+}
+
