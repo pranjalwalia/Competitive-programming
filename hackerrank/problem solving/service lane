@@ -1,0 +1,32 @@
+#include<stdio.h>
+
+int minima(int a[],int i , int j){
+    int n = j-i+1;
+    int min = a[i];
+    for(int k=i+1 ; k<=j ; k++){
+        if(min>a[k]){
+            min = a[k];
+        }
+    }
+    return min;
+}
+
+int main(){
+
+    int x;
+    int t;
+    scanf("%d%d" , &x , &t);
+    int a[x];
+    for(int m=0 ; m<x ; m++){
+        scanf("%d" , &a[m]);
+    }
+
+    int i,j;
+    while(t--){
+        scanf("%d%d" , &i ,  &j);
+        printf("%d\n" , minima(a,i,j));
+    }
+
+   
+    return 0;
+}
