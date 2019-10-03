@@ -1,0 +1,36 @@
+#include<stdio.h>
+
+int georgian(int year){
+    if (year % 400 == 0)  
+        return 1;  
+ 
+    if (year % 100 == 0)  
+        return 0;  
+  
+  
+    if (year % 4 == 0)  
+        return 1;  
+    return 0;  
+}
+
+int julian(int n){
+    if(n%4==0){
+        return 1;
+    }
+    return 0;
+}
+
+int main(){
+    
+    int y;
+    scanf("%d" , &y);
+    int out;
+    if(y==1918){
+        printf("26.09.1918");
+    }
+    (y<1919) ? (out = julian(y)) : (out = georgian(y)); 
+
+    (out==1) ? (printf("12.09.%d" , y)) : (printf("13.09.%d" , y));
+
+    return 0;
+}
