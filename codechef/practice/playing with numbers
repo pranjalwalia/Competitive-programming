@@ -1,0 +1,59 @@
+//FINDING THE SUM OF THE DIGITS 
+#include<stdio.h>
+int main(){
+
+    int t,n;
+    int sum;
+    scanf("%d" , &t);
+    while(t--){
+        sum=0;
+        scanf("%d" , &n);
+        while(n>0){
+            sum+=(n%10);
+            n/=10;
+        }
+        printf("%d\n" , sum);
+    }
+return 0;
+}
+
+
+//REVERSING THE DIGITS 
+#include<stdio.h>
+int main(){
+int n;
+int rev=0;
+scanf("%d",&n);
+while(n>0){
+rev = rev*10;
+rev = rev + (n%10);
+n = n/10;
+}
+printf("%d\n" , rev);
+
+return 0;
+}
+
+//FINDING THE NUMBER OF ZEROS AT THE END OF A FACTORIAL
+//basically were counting the min(count(2) , count(5)) to find the number of zeros at the end of a fact
+//least fact with count(0) = 0 is N=5
+
+#include<stdio.h>
+long long int fact(long long int n){
+    if(n==1)return 1;
+    return n*fact(n-1);
+}
+
+int main(){
+   int count=0;
+   int n;
+   //take input for n
+   
+   while(n>=5){
+       n = n/5;
+       count+=n;
+   }
+   
+   printf("%d" , count);
+    return 0;
+}
