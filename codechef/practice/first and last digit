@@ -1,0 +1,23 @@
+#include<stdio.h>
+
+long long int func(int x){
+    long long int sum=0;
+    sum+=(x%10);
+    while(x>=10){
+        x=x/10;
+    }
+    sum+=x;
+    return sum;
+}
+
+int main(){
+    long long int t;
+    long long int n;
+    scanf("%lld" , &t);
+    while(t--){
+        scanf("%lld" , &n);
+    printf("%lld\n" , func(n));
+    }
+
+    return 0;
+}
