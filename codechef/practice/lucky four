@@ -1,0 +1,29 @@
+#include<stdio.h>
+
+long long int search(long long int n){
+    long long int count=0;
+    while(n>0){
+        long long int k = n%10;
+        if(k==4){
+            count++;
+        }
+        n = n/10;
+    }
+
+
+return count;
+
+}
+
+int main(){
+    long long int n;
+    long long int t;
+    scanf("%lld" , &t);
+    while(t--){
+        scanf("%lld" , &n);
+        printf("%lld\n" , search(n));
+
+    }
+
+    return 0;
+}
