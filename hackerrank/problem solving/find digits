@@ -1,0 +1,32 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+    {
+    int t;
+    cin>>t;
+    while(t--)
+        {
+        int n;
+        cin>>n;
+        int r=n;
+        int count=0;
+        while(r!=0)
+            {
+            int rem= r%10;
+            if(rem ==0);
+                
+           else if(n%rem==0)
+                count++;
+           r/=10;
+        }
+        cout<<count<<endl;
+    }
+    
+    
+    return 0;
+}
