@@ -1,0 +1,33 @@
+#FIRST SOLUTION USING PYTHON3
+
+#using list comprehension is important because it helps to take the input in the same line.
+#had i used loops, each input would have been taken in the new line.
+
+
+d = [int(x) for x in input().split()]
+n = d[0]
+k = d[1]
+q = d[2]
+
+l = [int(x) for x in input().split()]
+
+for i in range(k):
+    p = l[len(l)-1]
+    l.pop()
+    l.insert(0,p)
+
+for i in range(q):
+    x = int(input())
+    print(l[x])
+
+
+
+
+
+#l = [3,4,5]
+#k = l[len(l)-1]
+#l.pop()
+#l.insert(0,k)
+
+#k=2
+# 345 534 453
