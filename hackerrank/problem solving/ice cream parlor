@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+int main(){
+
+    int t;
+    scanf("%d" , &t);
+    while(t--){
+    long int m;
+    long int n;
+    scanf("%ld%ld" , &m , &n);
+    long int a[n];
+    for(int i=0 ; i<n ; i++){
+        scanf("%ld" , &a[i]);
+    }
+    for(long int i=0 ; i<n ; i++){
+        for(long int j=i+1 ; j<n ; j++){
+            if(a[i]+a[j]==m){
+                printf("%ld %ld" , i+1 ,j+1);
+            }
+        }
+    }
+    }
+
+    return 0;
+
+}
