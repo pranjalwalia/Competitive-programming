@@ -1,0 +1,20 @@
+#include<stdio.h>
+
+int main(){
+
+    int n;
+    scanf("%d", &n);
+    int share=5;
+    int like = share/2;
+    int cf = like;
+    for(int i=1 ; i<n ; i++){
+        share = like*3;
+        like = share/2;
+        cf = cf + like;
+    }
+
+    printf("%d" , cf);
+
+    return 0;
+
+}
