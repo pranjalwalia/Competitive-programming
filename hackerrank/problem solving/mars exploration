@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+int main(){
+
+    char *s = (char*)malloc(150*sizeof(char));
+    scanf("%s" , s);
+    int l = strlen(s);
+    int count=0;
+
+    for(int i=0 ; i<l ; i+=3){
+        if(s[i]!='S')count++;
+        if(s[i+1]!='O')count++;
+        if(s[i+2]!='S')count++;
+    }
+
+    printf("%d" , count);
+    
+
+    return 0;
+}
