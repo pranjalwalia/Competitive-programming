@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int num(int p , int d , int m , int s){
+    int count=0;
+    while(s>=0){
+        s-=p;
+        p=max(p-d , m);
+        count++;
+    }
+
+    return count-1;
+}
+
+int main(){
+
+    int p,d,m,s;
+    cin >> p >> d >> m >> s;
+    cout << num(p,d,m,s) << endl;
+
+    return 0;
+}
