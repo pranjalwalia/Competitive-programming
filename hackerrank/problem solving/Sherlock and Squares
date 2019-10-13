@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int sq(int a, int b){
+    int count=0;
+    int k;
+    for(int i=sqrt(a) ; i<=sqrt(b) ; i++){
+        k = i*i;
+        if(k>=a && k<=b)count++;
+    }
+    return count;
+}
+
+int main(){
+    
+    int t;
+    cin >> t;
+    while(t--){
+        int x,y;
+        cin >> x>>y;
+        cout << sq(x,y) << endl;
+    }
+    
+
+    return 0;
+}
