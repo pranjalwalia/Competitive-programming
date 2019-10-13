@@ -25,3 +25,18 @@ int main(){
 
     return 0;
 }
+
+
+//LOGIC ALITER
+
+int sq(int a , int b){
+	int count=0;
+	int k;
+	int x = ceil(sqrt(a));
+	while(x*x<=b){
+		count++;
+		x++;
+	}
+
+	return count;
+}
