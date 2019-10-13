@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int num(int n , int c , int m){
+    
+    int count=0;
+    count+=(n/c);
+    int w = count;
+    while(m<=w){
+        w-=m;
+        count++;
+        w++;
+    }
+
+    return count;
+
+}
+
+int main(){
+
+    int t;
+    cin >> t;
+    while(t--){
+        int n,c,m;
+        cin >> n >> c >> m;
+        cout << num(n,c,m) << endl;
+    }
+
+    return 0;
+}
