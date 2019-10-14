@@ -1,10 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
 int main(){
-    int n;
-    scanf("%d" , &n);
-    int sum=0;
-    while( n>0){
+    int n;                     //initialising integer variable n
+    scanf("%d" , &n);          //getting user input for n
+    int sum=0;                 //initialising variable sum = 0
+    while( n>0){ 
 
         sum+=(n%10);// n%10 gives the last digit of a given number
         n= n/10;// n/10 removes the last digit of the number
