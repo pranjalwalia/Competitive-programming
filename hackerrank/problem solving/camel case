@@ -3,17 +3,17 @@
 
 int main(){
 
-    char string[100000];
-    scanf("%s" , string);
+    char string[100000];               //create a string array of length 100000
+    scanf("%s" , string);              //scanning string from user
     int l;
     int count=1;
-    l = strlen(string);
-    for(int i=0 ; i<l ; i++){
+    l = strlen(string);                //getting length of the string by strlen
+    for(int i=0 ; i<l ; i++){          //for loop to get compare ascii values
         if(string[i]<97){
             count++;
         }
     }
-    printf("%d" , count);
+    printf("%d" , count);              //printing the value of count
     
 
     return 0;
