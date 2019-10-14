@@ -6,12 +6,12 @@ int main(){
     scanf("%d" , &t);
     
     while(t--){
-        int n,k;
-    scanf("%d%d" ,&n , &k);
-    int a[n];
-    int count=0;
+        int n,k;             //initialising two variables n and k
+    scanf("%d%d" ,&n , &k);  //scanning two variables n and k
+    int a[n];                //initialising array
+    int count=0;             //initialising count as zero
     for(int i=0 ; i<n ; i++){
-        scanf("%d" , &a[i]);
+        scanf("%d" , &a[i]);  //for loop to scan array elements
         if(a[i]<=0)count++;
     }
     (count>=k) ? (printf("NO")) : (printf("YES"));
