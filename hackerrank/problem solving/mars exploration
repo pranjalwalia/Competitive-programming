@@ -4,18 +4,18 @@
 
 int main(){
 
-    char *s = (char*)malloc(150*sizeof(char));
-    scanf("%s" , s);
-    int l = strlen(s);
-    int count=0;
+    char *s = (char*)malloc(150*sizeof(char));             //allocating dynamic memory of 150 * charsize using malloc
+    scanf("%s" , s);                                       //getting input from user witn string length s
+    int l = strlen(s);                                     //getting string length using function strlen
+    int count=0;                                           //initialising count = 0
 
-    for(int i=0 ; i<l ; i+=3){
+    for(int i=0 ; i<l ; i+=3){                            //for loop to check logical parameters
         if(s[i]!='S')count++;
         if(s[i+1]!='O')count++;
         if(s[i+2]!='S')count++;
     }
 
-    printf("%d" , count);
+    printf("%d" , count);                                 //print count
     
 
     return 0;
