@@ -6,8 +6,8 @@ int main(){
     int sum=0;
     while( n>0){
 
-        sum+=(n%10);
-        n= n/10;
+        sum+=(n%10);// n%10 gives the last digit of a given number
+        n= n/10;// n/10 removes the last digit of the number
 
     }
     printf("%d" , sum);
