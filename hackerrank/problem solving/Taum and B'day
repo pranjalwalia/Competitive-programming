@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+    int t;
+    cin >> t;
+    while(t--){
+
+    long long int b,w;
+    long long int bc,wc,z;
+    cin >> b >> w;
+    cin >> bc >> wc >> z;
+    if(bc>wc+z){
+        cout << (wc+z)*b + wc*w << endl; 
+    }
+
+    else if(wc>bc+z){
+        cout << (bc+z)*w + bc*b << endl;
+    }
+    else{
+        cout << bc*b + wc*w << endl;
+    }
+
+    }
+    return 0;
+}
