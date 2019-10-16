@@ -7,10 +7,13 @@ int main(){
     scanf("%s" , string);              //scanning string from user
     int l;
     int count=1;
-    l = strlen(string);                //getting length of the string by strlen
-    for(int i=0 ; i<l ; i++){          //for loop to get compare ascii values
+    l = strlen(string);
+    //getting length of the string by strlen
+    int i = 0;
+    while( i<l ){          //for loop to get compare ascii values
         if(string[i]<97){
             count++;
+            i++;
         }
     }
     printf("%d" , count);              //printing the value of count
