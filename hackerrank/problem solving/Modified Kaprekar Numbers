@@ -45,72 +45,7 @@ bool prob(int p){
 
     if(k+m==p){
         return true;
-    }#include<bits/stdc++.h>
-using namespace std;
-
-int sum(int n){
-    int sum=0;
-    while(n>0){
-        sum+=(n%10);
-        n = n/10;
     }
-    return sum;
-}
-
-bool prob(int p){
-   long long  int  num = pow(p,2);
-    ostringstream str1; 
-    str1 << num; 
-    string geek = str1.str();
-
-    long long int x;
-    long long int y = geek.length();
-    if(geek.length()%2==0){
-        x = y/2;
-    }  
-    else{
-        x = (y-1)/2;
-    }
-    
-    char l[x];
-    char r[y-x];
-
-     for(long long int i=x ; i<geek.length() ; i++){
-        //cout << geek[i] << endl;
-        r[i-x] = geek[i];
-     //   s1+=r[i-x];
-    }
-
-    for(long long int i=0 ; i<x ; i++){
-        //cout << geek[i];
-        l[i] = geek[i];
-       // s2+=l[i];
-    }
-
-    int k = atoi(l);
-    int m = atoi(r);
-
-    if(k+m==p){
-        return true;
-    }
-    return false;
-
-}
-
-int main(){
-   int a,b;
-    cin >> a >> b;
-    int count=0;
-    for(long long int i=a ; i<=b ; i++){
-        if(prob(i)==1){
-            cout << i << " ";
-            count++;
-        }
-    }
-    if(count==0){
-        cout << "INVALID RANGE" << endl;
-    }
-}
     return false;
 
 }
