@@ -1,27 +1,46 @@
-#include<stdio.h>
+#include<bits/stdc++.h>
+using namespace std;
 
 int main(){
+    int n,m;
+    cin >> n >> m;
 
-    int n, m;
-    scanf("%d %d", &n, &m);
-    int a[100], b[100];
-    for (int i=0; i<n; i++)
-        scanf("%d", &a[i]);
-    for (int i=0; i<m; i++)
-        scanf("%d", &b[i]);
-    int cnt = 0;
-    for (int k=1; k<=100; k++)
-    {
-        int flag = 1;
-        for (int i=0; i<n; i++)
-            if (k % a[i] != 0)
-                flag = 0;
-        for (int i=0; i<m; i++)
-            if (b[i] % k != 0)
-                flag = 0;
-        if (flag == 1)
-            cnt ++;
+    vector<int>a;
+    vector<int>b;
+
+    for(int i=0 ; i<n ; i++){
+        int x;
+        cin >> x;
+        a.push_back(x);
     }
-    printf("%d\n", cnt);
-    return 0;
+
+    for(int i=0 ; i<m ; i++){
+        int x;
+        cin >> x;
+        b.push_back(x);
+    }
+    
+    int count=0;
+
+    for(int i=a[n-1] ; i<=b[m-1] ; i++){
+        int c=0;
+        for(int j=0 ; j<a.size() ; j++){
+            if(i%a[j]==0){
+                c++;
+            }
+        }
+
+        for(int k=0 ; k<b.size() ; k++){
+            if(b[k]%i==0){
+                c++;
+            }
+        }
+
+        if(c==n+m){
+            count++;
+        }
+        
+    }
+    cout << count << endl;
+    
 }
