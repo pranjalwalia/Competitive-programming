@@ -2,6 +2,10 @@
 #define fast ios_base::sync_with_stdio(false); cin.tie(NULL);cout.tie(NULL);
 using namespace std;
 
+/*
+ Contribute to the code to improve the algorithm execution time, clearly the algorithm is purely brute force and has nightmare
+ time complexity.
+*/
 
 int main(){
     fast;
