@@ -19,3 +19,7 @@ Solutions to problems from the sphere online judge.
 [CODEFORCES](https://codeforces.com/)
 
 Problem solutions from codeforces online platform.
+
+[HackerEarth](https://www.hackerearth.com/challenges/)
+
+My submissions from the platform HackerEarth.
