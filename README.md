@@ -5,7 +5,7 @@ I should mention that none of these solutions are written with respect to best S
 
 [Hackerrank](https://www.hackerrank.com/masterchief_01)
 
-The Hackerrank directory contains solutions for problems on Hackerrank - a competitive progrmming website. Most of the solutions are of implementation problems as of now.
+The Hackerrank directory contains solutions for problems on Hackerrank - a competitive progrmming web platform.
 
 [Codechef](https://www.codechef.com)
 
