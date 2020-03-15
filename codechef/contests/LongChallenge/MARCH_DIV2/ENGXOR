@@ -1,0 +1,53 @@
+//TLE partial correct
+#include<bits/stdc++.h>
+#define ll long long int 
+using namespace std;
+
+ll bitcount(ll x){	//O(logN)
+	ll count=0;
+	while(x){
+		count+= x&1;
+		x>>=1;
+	}
+	if(count%2==0){
+		return 2;
+	}
+	else{
+		return 1;
+	}
+}
+
+int main(){
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+
+	ll t;
+	cin >> t;
+	while(t--){
+		ll n , q;
+		cin >> n >> q;
+		// vector<ll>ans;
+		vector<ll>a(n);
+		// = {4,2,15,9,8,8};
+		for(ll i=0 ; i<n ; i++){
+			cin >> a[i];
+		}
+		while(q--){
+			ll odd=0 , even = 0;			//O(NlogN)
+			ll p;
+			cin >> p;
+			for(ll i=0 ; i<a.size(); i++){
+			// ans.push_back(p^a[i]);
+			ll x = p^a[i];
+			if(bitcount(x)==1){
+				odd++;
+			}
+			else{
+				even++;
+			}
+		}
+
+		cout << even << " " << odd << endl;
+		}
+	}
+}
