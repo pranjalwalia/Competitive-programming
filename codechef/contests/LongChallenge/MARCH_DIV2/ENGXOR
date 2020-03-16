@@ -51,3 +51,85 @@ int main(){
 		}
 	}
 }
+
+
+
+
+
+EDIT------O(N) submitted correct
+
+#include<bits/stdc++.h>
+using namespace std;
+#define fastio ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define ll long long int
+#define pb push_back
+#define InpArr(a,n) for(ll i=0; i<n ; i++){cin >> a[i];}
+#define PrintArr(a,i,j) for(ll k=i ; k<=j ; k++){cout << a[k] << " ";} 
+#define lcm(a,b) (a*b)/__gcd(a,b)
+#define ump unordered_map<ll,ll>ump;
+#define loop(i,x,y) for(ll i=x;i<y;i++)
+#define rloop(i,x,y) for(ll i=x-1;i>=y;i--)
+
+
+void fastscan(int &x){
+        bool neg=false;
+        register int c;
+        x =0;
+        c=getchar();
+        if(c=='-')
+        {
+            neg = true;
+            c=getchar();
+        }
+        for(;(c>47 && c<58);c=getchar())
+            x = (x<<1) + (x<<3) +c -48;
+        if(neg)
+            x *=-1;
+}
+
+inline int bitCount(int i) {
+    i = i - ((i >> 1) & 0x55555555);
+    i = (i & 0x33333333) + ((i >> 2) & 0x33333333);
+    i = (i + (i >> 4)) & 0x0f0f0f0f;
+    i = i + (i >> 8);
+    i = i + (i >> 16);
+    return i & 0x3f;
+}
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    int t,n,q;
+    fastscan(t);
+    while(t--){
+        fastscan(n);
+        fastscan(q);
+        int a[n],p[q],odd=0,even=0;
+
+        for(int i=0 ; i<n ; i++){
+            fastscan(a[i]);
+            if(bitCount(a[i])%2==0){
+                even++;
+            }
+            else{
+                odd++;
+            }
+        }
+
+        for(int i=0; i<q ; i++){
+            fastscan(p[i]);
+
+            if(bitCount(p[i])%2==0){
+                cout << even << " " << odd << "\n";
+            }
+            else{
+                cout << odd << " " << even << "\n";
+            }
+
+        }
+    }
+}
+
+
