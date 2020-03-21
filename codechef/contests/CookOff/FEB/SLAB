@@ -1,0 +1,85 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void fastscan(int &number){
+bool negative = false;
+register int c;
+number = 0;
+c = getchar();
+if(c=='-'){
+negative = true;c = getchar();}
+for (; (c>47 && c<58); c=getchar()){
+number = number *10 + c - 48;}
+if(negative){number *= -1;}
+}
+
+#define ff              first
+#define ss              second
+#define int             long long
+#define pb              push_back
+#define mp              make_pair
+#define pii             pair<int,int>
+#define vi              vector<int>
+#define mii             map<int,int>
+#define pqb             priority_queue<int>
+#define pqs             priority_queue<int,vi,greater<int> >
+#define setbits(x)      __builtin_popcountll(x)
+#define zrobits(x)      __builtin_ctzll(x)
+#define mod             1000000007
+#define inf             1e18
+#define ps(x,y)         fixed<<setprecision(y)<<x
+#define mk(arr,n,type)  type *arr=new type[n];
+#define w(x)            int x; cin>>x; while(x--)
+#define pw(b,p)         pow(b,p) + 0.1
+#define _fast_          ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+
+void file(){
+
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt" , "r" , stdin);
+	freopen("output.txt" , "w" , stdout);
+	#endif
+}
+
+int32_t main(){
+	//file();
+	_fast_;	
+
+	w(t){
+		int n;
+		cin >> n;
+		int a,b,c,d,e;
+		a = (500000-250000)*(0.05);
+		b = (750000-500000)*(0.10);
+		c = (1000000-750000)*(0.15);
+		d =	(1250000-1000000)*(0.20);
+		e = (1500000-1250000)*(0.25);
+		int fi=n;
+		if(n <= 250000){
+			fi = n;
+		}
+		else{
+			if(n > 250000 && n < 500001){
+				fi = fi - (n-250000)*(0.05);
+			}
+			else if( n > 500000 && n < 750001){
+				fi = fi - (a+(n-500000)*(0.10));
+			}
+			else if(n > 750000 && n < 1000001){
+				fi = fi - (a+b+(n-750000)*(0.15));
+			}
+			else if(n > 1000000 && n < 1250001){
+				fi = fi - (a+b+c+(n-1000000)*(0.20));
+			}
+			else if(n > 1250000 && n < 1500001){
+				fi = fi - (a+b+c+d+(n-1250000)*(0.25));
+			}
+			else if(n > 1500000){
+				fi = fi-(a+b+c+d+e+(n-1500000)*(0.30));
+			}
+		}
+		cout << fi << endl;
+	}
+
+	
+}
