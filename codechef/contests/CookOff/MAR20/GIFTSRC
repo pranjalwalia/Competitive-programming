@@ -1,0 +1,86 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void fastscan(int &number){
+bool negative = false;
+register int c;
+number = 0;
+c = getchar();
+if(c=='-'){
+negative = true;c = getchar();}
+for (; (c>47 && c<58); c=getchar()){
+number = number *10 + c - 48;}
+if(negative){number *= -1;}
+}
+
+#define ff              first
+#define ss              second
+#define int             long long
+#define pb              push_back
+#define mp              make_pair
+#define pii             pair<int,int>
+#define vi              vector<int>
+#define mii             map<int,int>
+#define pqb             priority_queue<int>
+#define pqs             priority_queue<int,vi,greater<int> >
+#define setbits(x)      __builtin_popcountll(x)
+#define zrobits(x)      __builtin_ctzll(x)
+#define mod             1000000007
+#define inf             1e18
+#define ps(x,y)         fixed<<setprecision(y)<<x
+#define mk(arr,n,type)  type *arr=new type[n];
+#define w(x)            int x; cin>>x; while(x--)
+#define pw(b,p)         pow(b,p) + 0.1
+#define _fast_          ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+
+void file(){
+
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt" , "r" , stdin);
+	freopen("output.txt" , "w" , stdout);
+	#endif
+}
+
+int32_t main(){
+	//file();
+	_fast_;	
+
+	w(t){
+		int n; cin >> n;
+		string s; cin >> s;
+		int x=0,y=0;
+		char curr=s[0];
+		
+		if(curr == 'L')x--;
+		if(curr == 'R')x++;
+		if(curr == 'U')y++;
+		if(curr == 'D')y--;
+
+		for(int i=0 ; i<n ; i++){
+			if(curr == s[i]){
+				continue;
+			}
+			if(curr=='L' && s[i]=='R'){
+				continue;
+			}
+			if(curr=='R' && s[i]=='L'){
+				continue;
+			}
+			if(curr=='U' && s[i]=='D'){
+				continue;
+			}
+			if(curr=='D' && s[i]=='U'){
+				continue;
+			}
+			else{
+				curr = s[i];
+				if(curr == 'L')x--;
+				if(curr == 'R')x++;
+				if(curr == 'U')y++;
+				if(curr == 'D')y--;
+			}
+		}
+
+		cout << x << " " << y << "\n";
+	}
+}
