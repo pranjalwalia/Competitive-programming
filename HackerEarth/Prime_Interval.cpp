@@ -2,7 +2,6 @@
 @ Pranjal Walia
 IIIT Bangalore
 */
-// https://www.hackerearth.com/problem/algorithm/connected-components-in-a-graph/description/
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -38,45 +37,52 @@ if(neg){x *= -1;}}
 #define repb(i,a,b) 	   for(int i=a;i>=b;i--)
 #define endl			   "\n"    
 
-void file(){
+#define tr(x) cout<<x<<endl;
+#define tr2(x,y) cout<<x<<" "<<y<<endl;
+#define tr3(x,y,z) cout<<x<<" "<<y<<" "<<z<<endl;
+#define tr4(w,x,y,z) cout<<w<<" "<<x<<" "<<y<<" "<<z<<endl;
+#define tr5(v,w,x,y,z) cout<<v<<" "<<w<<" "<<x<<" "<<y<<" "<<z<<endl;
+#define tr6(u,v,w,x,y,z) cout<<u<<" "<<v<<" "<<w<<" "<<x<<" "<<y<<" "<<z<<endl;
 
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt" , "r" , stdin);
-    freopen("output.txt" , "w" , stdout);
-    #endif
+int mypow(int a, int b){	//(logn) --> faster than recursive --> binary expo
+	int res = 1;            // call int x = mypow(2,5);
+	while (b > 0) {
+		if (b & 1)
+			res = res * a;
+		a = a * a;
+		b >>= 1;
+	}
 }
 
-int vis[1001];      //initialising the graph
-vi v[1001];
+void file(){
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt" , "r" , stdin);
+	freopen("output.txt" , "w" , stdout);
+	#endif
+}
 
-void dfs(int node){     //dfs on the graph
-    vis[node]=1;
-    for(int child : v[node]){
-        if(!vis[child])
-            dfs(child);
+const int N = 10001;
+int isprime[N];
+
+void sieve(){
+    int maxn = N-1;
+    for(int i=1 ; i<= maxn ; i++) isprime[i] = 1;
+    isprime[0] = isprime[1] = 0;
+
+    for(int i=2 ; i<= sqrt(maxn) ; i++){
+        if(isprime[i]){
+            for(int j=i*i;  j<= maxn ; j+=i)
+                isprime[j]=0;
+        }
     }
 }
 
 int32_t main(){
-    __;	
-    //input the graph
-    int n,m,a,b; cin >> n >> m;
-    while(m--){
-        cin >> a >> b;
-        v[a].pb(b); v[b].pb(a);
-    }
-    //input complete
-
-// in one go, dfs samples an entire component, therefore each time we get a false on 
-// the visited array, we call dfs again and increment the counter
-
-    int c=0;
-    for(int i=1 ; i<=n ; i++){
-        if(!vis[i]){
-            dfs(i); c++;
-        }
-    }
-    cout << c << endl;
-
-    return 0;
+	__;	
+	int a,b;
+	cin >> a >> b;
+	sieve();
+	for(int i=a; i<=b ; i++)
+		if(isprime[i])cout << i << " ";
+	return 0;
 }

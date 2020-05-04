@@ -46,11 +46,20 @@ int pow2(int x , int n){	//O(logn)
 		return x * pow2(x,n-1);
 }
 
+int mypow(int a, int b){	//(logn) --> faster
+    int res = 1;
+    while (b > 0) {
+        if (b & 1)
+            res = res * a;
+        a = a * a;
+        b >>= 1;
+    }
+    return res;
+}
+
 int32_t main(){	
-	//file();
 	int x = 5;
 	int n = 3;
-	cout << pow1(x,n) << endl;
 	cout << pow2(x,n) << endl;
 
 }

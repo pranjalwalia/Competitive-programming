@@ -2,7 +2,11 @@
 @ Pranjal Walia
 IIIT Bangalore
 */
-// https://www.hackerearth.com/problem/algorithm/connected-components-in-a-graph/description/
+
+/*
+https://www.hackerearth.com/practice/algorithms/graphs/depth-first-search/practice-problems/algorithm/bishu-and-his-girlfriend/
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -39,44 +43,44 @@ if(neg){x *= -1;}}
 #define endl			   "\n"    
 
 void file(){
-
     #ifndef ONLINE_JUDGE
     freopen("input.txt" , "r" , stdin);
     freopen("output.txt" , "w" , stdout);
     #endif
 }
 
-int vis[1001];      //initialising the graph
-vi v[1001];
-
-void dfs(int node){     //dfs on the graph
-    vis[node]=1;
-    for(int child : v[node]){
+void dfsd(int node , int d){        //modified dfs for the sssp tree
+    vis[node] = 1;
+    dis[node] = d;
+    for(auto child : g[node]){
         if(!vis[child])
-            dfs(child);
+            dfsd(child , dis[node]+1);
     }
 }
 
-int32_t main(){
-    __;	
-    //input the graph
-    int n,m,a,b; cin >> n >> m;
-    while(m--){
-        cin >> a >> b;
-        v[a].pb(b); v[b].pb(a);
-    }
-    //input complete
-
-// in one go, dfs samples an entire component, therefore each time we get a false on 
-// the visited array, we call dfs again and increment the counter
-
-    int c=0;
-    for(int i=1 ; i<=n ; i++){
-        if(!vis[i]){
-            dfs(i); c++;
+void Q2_SSSP(){
+int n;sd(n);
+    FOR(i ,0 , n-1){
+        int u,v; sd2(u,v);
+        g[u].pb(u);
+        g[v].pb(v);
+    }   
+    dfsd(1 , 0);
+    
+    int ans = -1;
+    int min_dist = inf;
+    int q; sd(q);
+    while(q--){
+        int id; sd(id);
+        if(dis[id] < min_dist){
+            min_dist = dis[id];
+            ans = id;
+        }
+        else{
+            if(dis[id]==min_dist && id < ans){
+                ans = id;
+            }
         }
     }
-    cout << c << endl;
-
-    return 0;
+    cout << ans << endl;
 }

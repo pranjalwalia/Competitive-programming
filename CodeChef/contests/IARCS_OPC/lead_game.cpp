@@ -6,7 +6,7 @@ int main(){
     int n;
     cin >> n;
     int a = 0, b = 0, lead = 0, win = 1;
-    
+
     for(int i = 0; i < n; ++i){
         int x, y;
         cin >> x >> y;
@@ -24,6 +24,7 @@ int main(){
         }
     }
     cout << win << " " << lead << endl;
-    
+
     return 0;
 }
+                      

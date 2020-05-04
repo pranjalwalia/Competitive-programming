@@ -2,7 +2,6 @@
 @ Pranjal Walia
 IIIT Bangalore
 */
-// https://www.hackerearth.com/problem/algorithm/connected-components-in-a-graph/description/
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -15,7 +14,7 @@ if(neg){x *= -1;}}
 
 #define ff              first
 #define ss              second
-#define int             long long
+// #define int             long long
 #define pb              push_back
 #define mp              make_pair
 #define pii             pair<int,int>
@@ -39,44 +38,42 @@ if(neg){x *= -1;}}
 #define endl			   "\n"    
 
 void file(){
-
     #ifndef ONLINE_JUDGE
     freopen("input.txt" , "r" , stdin);
     freopen("output.txt" , "w" , stdout);
     #endif
 }
 
-int vis[1001];      //initialising the graph
-vi v[1001];
 
-void dfs(int node){     //dfs on the graph
-    vis[node]=1;
-    for(int child : v[node]){
-        if(!vis[child])
-            dfs(child);
+#define tr(x) cout<<x<<endl;
+#define tr2(x,y) cout<<x<<" "<<y<<endl;
+#define tr3(x,y,z) cout<<x<<" "<<y<<" "<<z<<endl;
+#define tr4(w,x,y,z) cout<<w<<" "<<x<<" "<<y<<" "<<z<<endl;
+#define tr5(v,w,x,y,z) cout<<v<<" "<<w<<" "<<x<<" "<<y<<" "<<z<<endl;
+#define tr6(u,v,w,x,y,z) cout<<u<<" "<<v<<" "<<w<<" "<<x<<" "<<y<<" "<<z<<endl;
+
+bool a[87000008];
+vi primes;
+
+void sieve(){
+    int maxN = 87000009;
+    a[0] = a[1] = true;
+
+    for(int i=2 ; i<=sqrt(maxN) ; i++){
+        if(a[i]==false){
+            primes.pb(i);
+            for(int j=i*i ; j<=maxN ; j++)
+                a[j]=true;
+        }
     }
 }
 
 int32_t main(){
     __;	
-    //input the graph
-    int n,m,a,b; cin >> n >> m;
-    while(m--){
-        cin >> a >> b;
-        v[a].pb(b); v[b].pb(a);
+    int q; cin >> q;
+    while(q--){
+        int k; cin >> k;
+        cout << primes[k-1] << endl;
     }
-    //input complete
-
-// in one go, dfs samples an entire component, therefore each time we get a false on 
-// the visited array, we call dfs again and increment the counter
-
-    int c=0;
-    for(int i=1 ; i<=n ; i++){
-        if(!vis[i]){
-            dfs(i); c++;
-        }
-    }
-    cout << c << endl;
-
     return 0;
 }
