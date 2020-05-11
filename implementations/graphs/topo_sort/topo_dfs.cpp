@@ -34,7 +34,7 @@ if(neg){x *= -1;}}
 #define rsortv(v)       				sort(v.rbegin() , v.rend())
 #define pw(b,p)         				pow(b,p) + 0.1
 #define __          	   				ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
-#define FOR(i,a,b)	   					for(int i=a;i<b;i++)
+#define rep(i,a,b)	   					for(int i=a;i<b;i++)
 #define repb(i,a,b) 	   				for(int i=a;i>=b;i--)
 #define endl			   				"\n"    
 
@@ -50,46 +50,63 @@ if(neg){x *= -1;}}
 #define sd3(x,y,z) cin >> x >> y >> z;
 #define sd4(w,x,y,z) cin >> w >> x >> y >> z;
 
-const int N = 1e5+5;
-vi g[N];
-int vis[N];
-
-int d_max;
-
-void dfs_d(int node , int d){
-    vis[node] = 1;
-    if(d > d_max){
-        d_max = d;
-    }
-    for(int child : g[node]){
-        if(!vis[child]){
-            dfs_d(child , d+1);
-        }
+int mypow(int a, int b){	//(logn) --> faster than recursive --> binary expo
+    int res = 1;            // call int x = mypow(2,5);
+    while (b > 0) {
+        if (b & 1)
+            res = (res * a)%mod;
+        a = (a * a)%mod;
+        b >>= 1;
     }
 }
 
-// Brute force method , consider every node once as the root and perform dfs to find the max distamce O(N^2)
+void file(){
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt" , "r" , stdin);
+    freopen("output.txt" , "w" , stdout);
+    #endif
+}
+
+
+const int N = 1e5+5;
+int vis[N];
+vi g[N];
+stack<int>s;
+
+void dfs(int node){
+    vis[node]=1;
+    for(int child : g[node]){
+        if(!vis[child]){
+            dfs(child);
+        }
+    }
+    s.push(node);
+}
+
+// Sample DAG
+// 6 6
+// 5 0
+// 4 0
+// 5 2
+// 2 3
+// 3 1
+// 4 1 
 
 int32_t main(){
-    __;
+    __;	    
+    // file();
     int n,e; sd2(n,e);
-    FOR(i ,0 , e){
+    rep(i ,0 ,e){
         int u,v; sd2(u,v);
-        g[v].pb(u);
-        g[u].pb(v);
+        g[u].pb(v);         // remember graph is a DAG --> modify the adj list
     }
-    for(int i=1; i<n+1 ; i++){
-        /*  
-        VERY IMPORTANT --> THE STEPS I FORGET WHEN CHANGING THE ROOT
-        1. reset the visited array
-        2. reset the value of the max_d !! important
-        */
-        for(int i=1 ; i<n+1 ; i++){
-            vis[i]=0;
-        }
-	d_max=-1;
-        dfs_d(i ,0);
+    rep(i , 0 , n){
+        if(!vis[i])
+            dfs(i);
     }
-    tr(d_max);
+    while(!s.empty()){
+        cout << s.top() << " ";
+        s.pop();
+    }
     return 0;
 }

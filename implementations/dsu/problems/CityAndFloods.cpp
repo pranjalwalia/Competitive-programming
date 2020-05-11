@@ -1,7 +1,10 @@
-/*	Author
-@ Pranjal Walia
-IIIT Bangalore
+/*
+ 	https://www.hackerearth.com/practice/data-structures/disjoint-data-strutures/basics-of-disjoint-data-structures/practice-problems/algorithm/city-and-flood-1/
 */
+
+/* the problem is to basically find the number of commected components after k merge operations */
+
+/*	Author --> @Pranjal Walia   IIIT Bangalore  */
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -34,7 +37,7 @@ if(neg){x *= -1;}}
 #define rsortv(v)       				sort(v.rbegin() , v.rend())
 #define pw(b,p)         				pow(b,p) + 0.1
 #define __          	   				ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
-#define FOR(i,a,b)	   					for(int i=a;i<b;i++)
+#define rep(i,a,b)	   					for(int i=a;i<b;i++)
 #define repb(i,a,b) 	   				for(int i=a;i>=b;i--)
 #define endl			   				"\n"    
 
@@ -50,46 +53,71 @@ if(neg){x *= -1;}}
 #define sd3(x,y,z) cin >> x >> y >> z;
 #define sd4(w,x,y,z) cin >> w >> x >> y >> z;
 
-const int N = 1e5+5;
-vi g[N];
-int vis[N];
-
-int d_max;
-
-void dfs_d(int node , int d){
-    vis[node] = 1;
-    if(d > d_max){
-        d_max = d;
-    }
-    for(int child : g[node]){
-        if(!vis[child]){
-            dfs_d(child , d+1);
-        }
+int mypow(int a, int b){	//(logn) --> faster than recursive --> binary expo
+    int res = 1;            // call int x = mypow(2,5);
+    while (b > 0) {
+        if (b & 1)
+            res = (res * a)%mod;
+        a = (a * a)%mod;
+        b >>= 1;
     }
 }
 
-// Brute force method , consider every node once as the root and perform dfs to find the max distamce O(N^2)
+void file(){
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt" , "r" , stdin);
+    freopen("output.txt" , "w" , stdout);
+    #endif
+}
+
+const int N = 1e5+5;
+int p[N];
+int rnk[N];
+
+void init(int n){
+    rep(i ,1 , n+1){
+        p[i] = i;
+        rnk[i]=1;
+    }
+}
+
+int find(int x){
+    if(p[x]==x)
+        return x;
+    return p[x] = find(p[x]);
+}
+
+void merge(int x, int y){
+    int px = find(x);
+    int py = find(y);
+
+    if(px == py)
+        return;
+    
+    if(rnk[px] > rnk[py])
+        p[py] = p[px];
+    else
+        p[px]=p[py];
+
+    if(rnk[px]==rnk[py])
+        rnk[py]++;
+    return;
+}
 
 int32_t main(){
     __;
-    int n,e; sd2(n,e);
-    FOR(i ,0 , e){
+    memset(p , -1 , sizeof(p));
+    int n,k; sd2(n,k);
+    init(n);
+    while(k--){
         int u,v; sd2(u,v);
-        g[v].pb(u);
-        g[u].pb(v);
+        merge(u,v);
+    }	
+    int count=0;
+    rep(i ,1 ,n+1){
+        if(p[i]==i)
+            count++;
     }
-    for(int i=1; i<n+1 ; i++){
-        /*  
-        VERY IMPORTANT --> THE STEPS I FORGET WHEN CHANGING THE ROOT
-        1. reset the visited array
-        2. reset the value of the max_d !! important
-        */
-        for(int i=1 ; i<n+1 ; i++){
-            vis[i]=0;
-        }
-	d_max=-1;
-        dfs_d(i ,0);
-    }
-    tr(d_max);
+    tr(count);
     return 0;
 }
