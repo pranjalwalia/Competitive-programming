@@ -69,7 +69,7 @@ int bs(int a[] , int s , int e, int x){
 
 bool is_pal(string s) {return equal(all(s), s.rbegin());}
 
-int mypow(int a, int b){        //(logn) --> faster than recursive --> binary expo
+int mypow(int a, int b){        //(logn) fast exponentiation
     int res = 1;            // call int x = mypow(2,5);
     while (b > 0) {
         if (b & 1)
