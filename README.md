@@ -7,7 +7,7 @@ I should mention that none of these solutions are written with respect to best S
 
 Most of these codes are snipetts and library implementations, it is advisable to use them as a reference and not to run them as I will not be responsible for any damages that may come to your machine as a consequnece.
 
-Find Me -- [StopStalk HANDLE](https://www.stopstalk.com/user/profile/masterchief_01)
+Find Me -- [My StopStalk Handle](https://www.stopstalk.com/user/profile/masterchief_01)
 
 [CODEFORCES](https://codeforces.com/profile/masterchief_01)
 
@@ -39,4 +39,4 @@ Solutions to problems from the Sphere Online Judge.
 
 My submissions from the platform HackerEarth.
 
-Contact Me-- [LINKEDIN](https://www.linkedin.com/in/pranjal-walia-53b952189/)
+Contact Me-- [My Linkedin Profile](https://www.linkedin.com/in/pranjal-walia-53b952189/)
