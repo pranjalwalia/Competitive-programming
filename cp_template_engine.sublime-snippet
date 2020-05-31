@@ -83,6 +83,7 @@ int mypow(int a, int b){        //(logn) fast exponentiation
 int32_t main(){	
 	__;
 	file();
+	$1
 }
 
 ]]></content>
