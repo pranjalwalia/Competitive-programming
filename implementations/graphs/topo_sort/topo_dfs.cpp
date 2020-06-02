@@ -70,6 +70,8 @@ stack<int>s;
     1. Maintain a global stack( different from the dfs stack ) to record the nodes after finishing their dfs traversal.
     2. After completing the dfs call to a particular node, push it onto the stack
     3. Empty the stack, the resulting order of elements is a valid topological sort.
+    
+    A valid topologcal sort exists for a SIMPLE directed acyclic graph.
 */
 void dfs(int node){
     vis[node]=1;
