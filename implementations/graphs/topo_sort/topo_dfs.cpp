@@ -5,13 +5,6 @@ IIIT Bangalore
 #include<bits/stdc++.h>
 using namespace std;
 
-void fastscan(int &x){
-bool neg = false;register int c;
-x = 0;c = getchar();
-if(c=='-'){neg = true;c = getchar();}
-for(; (c>47 && c<58); c=getchar()){x = x *10 + c - 48;}
-if(neg){x *= -1;}}
-
 #define ff              				first
 #define ss              				second
 #define int             				long long
@@ -72,7 +65,12 @@ const int N = 1e5+5;
 int vis[N];
 vi g[N];
 stack<int>s;
-
+/*
+    A graph can have multiple order of topological sortings, but if we traverse the graph in increasing seq--> unique
+    1. Maintain a global stack( different from the dfs stack ) to record the nodes after finishing their dfs traversal.
+    2. After completing the dfs call to a particular node, push it onto the stack
+    3. Empty the stack, the resulting order of elements is a valid topological sort.
+*/
 void dfs(int node){
     vis[node]=1;
     for(int child : g[node]){
