@@ -1,3 +1,26 @@
+/*
+WATCH STRIVERS VIDEO FOR THE LOGIC
+   input: 7 8 
+          1 2
+          2 3
+          4 1
+          7 1
+          7 4
+          6 7
+          5 6
+          4 5
+    out : cycle detected
+    =========================
+    inp: 
+        6 5
+        1 2
+        5 2
+        6 5
+        2 3
+        4 3
+    out: No cycle
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 #define ff              first
@@ -24,6 +47,13 @@ using namespace std;
 #define endl			"\n"
 #define m(a)		    memset(a,0,sizeof(a))
 #define all(x)                          begin(x), end(x)
+
+void fastscan(int &x){
+bool neg = false;register int c;
+x = 0;c = getchar();
+if(c=='-'){neg = true;c = getchar();}
+for(; (c>47 && c<58); c=getchar()){x = x *10 + c - 48;}
+if(neg){x *= -1;}}
 
 void file(){
 	#ifndef ONLINE_JUDGE
@@ -73,49 +103,20 @@ int mypow(int a, int b){        //(logn) fast exponentiation
     return (res%mod);
 }
 
-/*
-WATCH STRIVERS VIDEO FOR THE LOGIC
-
-   input: 7 8 
-          1 2
-          2 3
-          4 1
-          7 1
-          7 4
-          6 7
-          5 6
-          4 5
-    out : cycle detected
-    =========================
-    inp: 
-        6 5
-        1 2
-        5 2
-        6 5
-        2 3
-        4 3
-    out: No cycle
-
-
-*/
-
 const int N = 1e5+5;
 vi g[N];
 bool vis[N];
 bool rec[N];
 
 bool dfs(int node){
-	if(!vis[node]){
-		vis[node]=1;
-		rec[node]=1;
-		for(int child : g[node]){
-			if(!vis[child] && dfs(child)) return true;
-			else if(rec[child]==1) return true;
-		}
-		rec[node]=0;
-		return false;		
+	vis[node]=1;
+	rec[node]=1;
+	for(int child : g[node]){
+		if(!vis[child] && dfs(child)) return true;
+		else if(rec[child]) return true;
 	}
-	else return false;
+	rec[node]=0;
+	return 0;
 }
 
 int32_t main(){	
@@ -131,11 +132,14 @@ int32_t main(){
 	{
 		if(!vis[i]){
 			flag = dfs(i);
+			if(flag){
+				break;
+			}
 		}
 	}
-	if(flag) cout << "Cycle Detected" << endl;
-	else cout << "No Cycle" << endl;
-
-return 0;
+	tr(flag);
+	return 0;
 }
+
+
 
