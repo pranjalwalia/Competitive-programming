@@ -1,8 +1,8 @@
 # Number Theory Logs
 
 ### GCD
-#### 1. Find the length of the longest subarray with maximum value of gcd.
-***Note! The Important thing here is that the gcd(A,B) is maximum and adding more elements to this will lead to either GCD decreasing or stays constant.***
+#### 1. ***Find the length of the longest subarray with maximum value of gcd.***
+###### **Note: gcd(A,B) is maximum and adding more elements to this will lead to either GCD decreasing or staying constant.**
 ######  Find the max_gcd by iterating over pairs, once computed, iterate again from the start, this time keep checking pairs, when we encounter a pair with gcd == gcd_max, iterate from there till the gcd decreases update length of subarray place the pointer to the point where gcd broke the cycle.
 		gcd_max=1;
 		// calc max_gcd
