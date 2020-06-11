@@ -31,3 +31,12 @@
 			l=0;
 		}` 
 
+
+<hr/>
+
+> ***Number of Distinct values of  B/gcd(A/B) , a belongs to [1,B]***
+
+The number of distinct values is equal to the number of divisors of B.
+
+<hr>
+
