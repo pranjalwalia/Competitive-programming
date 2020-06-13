@@ -42,7 +42,7 @@ void file(){
 const int N = 1e6+7;
 int spf[N];
 
-void sof(){
+void sieve_factor(){
 	spf[1] = 0;
 	for(int i=2 ; i<N ; i++)
 		spf[i]=i;
@@ -63,7 +63,7 @@ void sof(){
 
 int32_t main(){	
 	__;
-	sof();
+	sieve_factor();
 	rep(i, 1 , 50){
 		if(spf[i]==i)
 			cout << i << " " << " prime" << endl;
