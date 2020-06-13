@@ -27,7 +27,7 @@ void primeFact(int N){                  //O(sqrtN)
     }
 }
 
-/*********************************************************************************************************************************/
+/**************************************************************************************************************************************************************************************************************/
 /*
     PRIME FACTORISATION USING THE SIEVE IN O(logN) TIME
 */
@@ -51,6 +51,8 @@ void sieve_factor(){
         } 
     } 
 }
+
+// return the prime factorization..O(logN) but preprocessing is O(N)..
 vector<int> getFactorization(int x) 
 { 
     vector<int> ret; 
@@ -61,8 +63,32 @@ vector<int> getFactorization(int x)
     } 
     return ret; 
 }
+/*
+COUNT THE NUMBER OF DIVISORS.. If N = A^i * B^j * C^k...
+	then the number of divisors of N = (i+1)*(j+1)*(k+1)...
+	1. use a map to store the power of prime factors..
+	
+	vi ans = getFactorization(24);
+	map<int,int>m; 
+	rep(i , 0 ,ans.size()) m[ans[i]]++;
+	int num_divisors = 1;
+	for(auto itr:m){
+		num_divisors*=(itr.ss+1);
+	}
+	tr(num_divisors);
+
+
+COUNT THE SUM OF DIVISORS OF A NUMBER...
+	vi ans = getFactorization(24);
+	map<int,int>m; 
+	rep(i , 0 ,ans.size()) m[ans[i]]++;
+	int sum_divisors = 1;
+	for(auto itr:m){
+		sum_divisors *= ((itr.ff)**(itr.ss+1)-1)/(itr.ff-1);
+	}
+*/
  
-/*****************************************************************************************************************************************/
+/***********************************************************************************************************************************************************************
 
 //divisors of a number
 vi divisors(int n){
@@ -77,7 +103,7 @@ vi divisors(int n){
 	}
 	return v;
 }
-
+//Number of divisors can also be found here by adding a count..
 
 /*****************************************************************************************************************************************/
 
