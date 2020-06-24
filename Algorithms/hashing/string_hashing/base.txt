@@ -1,0 +1,29 @@
+// refer to cp-algorithms
+
+The Idea is to precompute the hash value of the entire string in O(N0 and find the hash of a substrign in O(1) and compare them..
+const int N = 1e5+7;
+int h[N];
+int power[N];
+int p = 331;
+
+void generate_hash(string s){
+	power[0]=1;
+	int l = s.length();
+	for(int i=1 ; i<l ; i++){
+		power[i] = ((power[i-1]%mod)*(p%mod))%mod;
+	}
+	for(int i=0;i<l;i++){
+        h[i+1]=(h[i]*p+s[i])%mod;
+    }
+}
+
+int get_hash(int l,int r){
+    return  ((h[r+1]-(h[l]*power[r-l+1])%mod)+mod)%mod;
+}
+
+int main(){
+	string s; cin >> s;
+	generate_hash(s);
+	int x = get_hash(4,s.length()-1);
+}
+
