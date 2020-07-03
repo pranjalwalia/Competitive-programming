@@ -1,0 +1,3 @@
+//refer gfg for boilerplate...
+
+1. https://codeforces.com/contest/1341/problem/B
