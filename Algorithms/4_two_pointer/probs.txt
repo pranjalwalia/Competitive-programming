@@ -1,0 +1,3 @@
+//epic blog => https://www.quora.com/q/techparoksha/The-Two-Pointer-Algorithm
+
+https://www.spoj.com/problems/HOTELS/
