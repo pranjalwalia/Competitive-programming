@@ -1,3 +1,17 @@
 //epic blog => https://www.quora.com/q/techparoksha/The-Two-Pointer-Algorithm
 
-https://www.spoj.com/problems/HOTELS/
+1. Motivation Problem: Given a sorted array A, having N integers. 
+    You need to find any pair(i,j) having sum as given number X
+2. Motivation Problem: Given two sorted arrays A and B, each having length N and M respectively. 
+    Form a new sorted merged array having values of both the arrays in sorted format.
+3. Given an array having N integers, find the contiguous subarray having sum as great as possible, but not greater than M. 
+    For details on the statement, refer the problem link https://www.spoj.com/problems/HOTELS/
+4. Motivation Problem: Given an array containing N integers, you need to find the length of the smallest contiguous subarray 
+    that contains atleast K distinct elements in it. Output "−1" if no such subarray exists.
+    
+5. Motivation Problem: Given an array having N integers, you need to find out a subsequence of K integers such that these K integers have the minimum hustle.
+Hustle of a sequence is defined as sum of pair-wise absolute differences divided by the number of pairs.
+For details on the statement, refer the problem link codeforces.com/problemset/problem/371/E
+ 
+ 
+ 
