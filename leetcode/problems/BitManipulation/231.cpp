@@ -1,7 +1,10 @@
 
-bool check_power_of_two(int n)
-{
-	if(n<=0) return 0;
-	// return (ceil(log2(n)) == floor(log2(n))); => slow..
-    return !(n&(n-1));    
-}
+
+class Solution {
+public:
+    bool isPowerOfTwo(int n) {
+        if(n<=0) return false;
+        if((n&(n-1))==0) return true;
+        else return false;
+    }
+};
