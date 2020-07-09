@@ -1,3 +1,6 @@
+// 1.cpp => for a given array, find the number of subarrays with the given XOR.
+
+
 #include<bits/stdc++.h>
 using namespace std;
 #define ff              first
