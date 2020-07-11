@@ -1,5 +1,5 @@
 // 1.cpp => for a given array, find the number of subarrays with the given XOR.
-
+// 2.cpp => https://codeforces.com/problemset/problem/467/B
 
 #include<bits/stdc++.h>
 using namespace std;
