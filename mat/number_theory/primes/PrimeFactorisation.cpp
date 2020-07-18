@@ -6,24 +6,21 @@ using namespace std;
 #define ff  first
 #define ss  second
 #define pb push_back
+#define vi vector<int>
 
-
-vector<pii>factors;
-void primeFact(int N){                  //O(sqrtN)
-    for(int i=2 ; i*i<=(N) ; i++){
-        if(N%i==0){
-            int count=0;
-            while(N%i==0){
-                count++;
-                N/=i;
+//======================================================//
+map<int,int>m;  
+void getPrimeFactors(int n){        //O(sqrt(n))
+    for(int i=2 ; i*i <= n ; i++){
+        if(n%i==0){
+            while(n%i==0){
+                m[i]++;
+                n/=i;
             }
-            factors.pb(mp(i,count));
-            // cout << i << "^" << count << endl;
         }
     }
-    if(N>1){
-        factors.pb(mp(N,1));
-        // cout << N << "^" << 1 << endl;
+    if(n!=1){
+        m[n]++;
     }
 }
 
@@ -53,16 +50,17 @@ void sieve_factor(){
 }
 
 // return the prime factorization..O(logN) but preprocessing is O(N)..
-vector<int> getFactorization(int x) 
-{ 
-    vector<int> ret; 
-    while (x != 1) 
-    { 
-        ret.push_back(spf[x]); 
-        x = x / spf[x]; 
-    } 
-    return ret; 
+
+void getFactorization(int n){
+    //vi res;
+    while(n != 1){
+        //res.pb(spf[n]);
+        m[spf[n]]++;
+        n/=spf[n];
+    }
+    //return res;
 }
+
 /*
 COUNT THE NUMBER OF DIVISORS.. If N = A^i * B^j * C^k...
 	then the number of divisors of N = (i+1)*(j+1)*(k+1)...
@@ -91,7 +89,7 @@ COUNT THE SUM OF DIVISORS OF A NUMBER...
 /***********************************************************************************************************************************************************************/
 
 //divisors of a number
-vi divisors(int n){
+vector<int> divisors(int n){
 	vi v;
 	for(int i=1; i*i<=n ; i++){
 		if(n%i==0){
@@ -121,6 +119,6 @@ int main(){
     cout << endl;
 
 
-    findDivisors(576);
+    vi v1 = divisors(576);
 }
 
