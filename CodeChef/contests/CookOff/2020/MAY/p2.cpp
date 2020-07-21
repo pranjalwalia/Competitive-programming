@@ -1,5 +1,4 @@
-<snippet>
-	<content><![CDATA[
+//https://www.codechef.com/COOK118B/problems/CHEFSHIP
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -62,11 +61,6 @@ int bs(int a[] , int s , int e, int x){
 #define tr5(v,w,x,y,z) cout<<v<<" "<<w<<" "<<x<<" "<<y<<" "<<z<<endl;
 #define tr6(u,v,w,x,y,z) cout<<u<<" "<<v<<" "<<w<<" "<<x<<" "<<y<<" "<<z<<endl;
 
-#define deb(x) cout<<#x<<"="<<x<<endl
-#define deb2(x,y) cout<<#x<<"="<<x<<","<<#y<<"="<<y<<endl
-#define deb3(x,y,z) cout<<#x<<"="<<x<<","<<#y<<"="<<y<<","<<#z<<"="<<z<<endl
-#define deba(a) for(auto &x:a) cout<<x<<" ";
-
 #define sd(x) cin >> x;
 #define sd2(x,y) cin >> x >> y;
 #define sd3(x,y,z) cin >> x >> y >> z;
@@ -74,7 +68,7 @@ int bs(int a[] , int s , int e, int x){
 
 bool is_pal(string s) {return equal(all(s), s.rbegin());}
 
-int mypow(int a, int b){        //(logn) fast exponentiation
+int mypow(int a, int b){        //(logn) --> faster than recursive --> binary expo
     int res = 1;            // call int x = mypow(2,5);
     while (b > 0) {
         if (b & 1)
@@ -82,19 +76,68 @@ int mypow(int a, int b){        //(logn) fast exponentiation
         a = (a * a)%mod;
         b >>= 1;
     }
-	return (res%mod);
 }
 
-int32_t main(){	
+const int N = 1e5+7;
+int h[N];
+int power[N];
+int p = 47;
+
+void generate_hash(string s){
+	power[0]=1;
+	int l = s.length();
+	for(int i=1 ; i<l ; i++){
+		power[i] = ((power[i-1]%mod)*(p%mod))%mod;
+	}
+	for(int i=0;i<l;i++){
+        h[i+1]=(h[i]*p+s[i])%mod;
+    }
+}
+
+int get_hash(int l,int r){
+    return  ((h[r+1]-(h[l]*power[r-l+1])%mod)+mod)%mod;
+}
+
+int32_t main(){
 	__;
 	file();
-	$1
+	w(t){
+		string s; cin >> s;
+		int f[26]; fill(f , f+26 , 0);
+		rep(i ,0 ,s.length()) f[s[i]-'a']++;
+		bool possible=1;
+		rep(i ,0 ,26){
+			if(f[i]&1){
+				possible=0; break;
+			}
+		}
+		if(!possible) cout << 0 << endl;
+		else{
+			generate_hash(s);
+			int c=0;
+			int l = s.length();
+
+			for(int i=2 ; i<l-1 ; i+=2){
+				if(get_hash(0 , i/2-1)==get_hash(i/2 ,i-1) and get_hash(i , (l+i)/2-1) == get_hash( (l+i)/2 , l-1 )){
+					c++;
+				}
+			}
+		tr(c);
+		}
+	}
+	return 0;
 }
 
-]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>#</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<!-- <scope>source.python</scope> -->
-</snippet>
+/*for(int i=2 ; i<=l-2 ; i+=2){
+	if(s.substr(0 , i/2) == s.substr(i/2 , i/2)){
+		if(s.substr(i , (l-i)/2) == s.substr(i+(l-i)/2 , (l-i)/2)) c++;
+	}
+	else continue;
+	//string s1 = s.substr(0 , i/2);
+	//string s2 = s.substr(i/2 , i/2);
+	//string s3 = s.substr(i , (l-i)/2);
+	//string s4 = s.substr(i+(l-i)/2 , (l-i)/2);
+	//if(s1==s2 and s3==s4) c++;
+}
+*/
 

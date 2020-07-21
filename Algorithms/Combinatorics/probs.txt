@@ -1,0 +1,1 @@
+p1.cpp: https://codeforces.com/contest/478/problem/B  (Excellent application of selection and distribution)

@@ -1,14 +1,13 @@
-<snippet>
-	<content><![CDATA[
+https://uva.onlinejudge.org/external/105/10533.pdf  => digit primes
+
 #include<bits/stdc++.h>
 using namespace std;
-
 #define ff              first
 #define ss              second
 #define int             long long
 #define pb              push_back
 #define mp              make_pair
-#define ii              pair<int,int>
+#define pii              pair<int,int>
 #define vi              vector<int>
 #define mii             map<int,int>
 #define pqb             priority_queue<int>
@@ -28,7 +27,6 @@ using namespace std;
 #define m(a)		    memset(a,0,sizeof(a))
 #define all(x)                          begin(x), end(x)
 
-
 void fastscan(int &x){
 bool neg = false;register int c;
 x = 0;c = getchar();
@@ -38,8 +36,8 @@ if(neg){x *= -1;}}
 
 void file(){
 	#ifndef ONLINE_JUDGE
-	freopen("input.txt" , "r" , stdin);
-	freopen("output.txt" , "w" , stdout);
+	freopen("in.txt" , "r" , stdin);
+	freopen("out.txt" , "w" , stdout);
 	#endif
 }
 
@@ -65,7 +63,6 @@ int bs(int a[] , int s , int e, int x){
 #define deb(x) cout<<#x<<"="<<x<<endl
 #define deb2(x,y) cout<<#x<<"="<<x<<","<<#y<<"="<<y<<endl
 #define deb3(x,y,z) cout<<#x<<"="<<x<<","<<#y<<"="<<y<<","<<#z<<"="<<z<<endl
-#define deba(a) for(auto &x:a) cout<<x<<" ";
 
 #define sd(x) cin >> x;
 #define sd2(x,y) cin >> x >> y;
@@ -82,19 +79,49 @@ int mypow(int a, int b){        //(logn) fast exponentiation
         a = (a * a)%mod;
         b >>= 1;
     }
-	return (res%mod);
+    return (res%mod);
+}
+
+const int N = 1e6+5;
+int p[N];
+bool isprime[N];
+
+void sieve(){
+	isprime[0]=0; isprime[1]=0; isprime[2]=1;
+	for(int i=2; i*i<=N ; i++){
+		if(isprime[i]){
+			for(int j=i*i ; j<=N; j+=i){
+				isprime[j]=0;
+			}
+		}
+	}
+}
+
+int sum(int x){
+	int s=0; while(x > 0){ s+=(x%10); x/=10;}
+	return s;
 }
 
 int32_t main(){	
 	__;
 	file();
-	$1
+	fill(isprime , isprime+N , 1);
+	sieve();
+	p[1]=0; p[2]=1; p[3]=2; p[4]=2; p[5]=3;
+	for(int i=6 ; i<N ; i++){
+		if(isprime[i] && isprime[sum(i)])
+			p[i] = p[i-1]+1;
+		else p[i] = p[i-1];
+	}
+	
+	int t; scanf("%d" , &t);
+	while(t--){
+		int a,b; scanf("%d%d" , &a,&b);
+		printf("%d\n" , p[a]-p[b]);
+	}
+	return 0;
 }
 
-]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>#</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<!-- <scope>source.python</scope> -->
-</snippet>
+
+
 

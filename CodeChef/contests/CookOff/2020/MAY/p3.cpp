@@ -1,5 +1,3 @@
-<snippet>
-	<content><![CDATA[
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -62,11 +60,6 @@ int bs(int a[] , int s , int e, int x){
 #define tr5(v,w,x,y,z) cout<<v<<" "<<w<<" "<<x<<" "<<y<<" "<<z<<endl;
 #define tr6(u,v,w,x,y,z) cout<<u<<" "<<v<<" "<<w<<" "<<x<<" "<<y<<" "<<z<<endl;
 
-#define deb(x) cout<<#x<<"="<<x<<endl
-#define deb2(x,y) cout<<#x<<"="<<x<<","<<#y<<"="<<y<<endl
-#define deb3(x,y,z) cout<<#x<<"="<<x<<","<<#y<<"="<<y<<","<<#z<<"="<<z<<endl
-#define deba(a) for(auto &x:a) cout<<x<<" ";
-
 #define sd(x) cin >> x;
 #define sd2(x,y) cin >> x >> y;
 #define sd3(x,y,z) cin >> x >> y >> z;
@@ -74,7 +67,7 @@ int bs(int a[] , int s , int e, int x){
 
 bool is_pal(string s) {return equal(all(s), s.rbegin());}
 
-int mypow(int a, int b){        //(logn) fast exponentiation
+int mypow(int a, int b){        //(logn) --> faster than recursive --> binary expo
     int res = 1;            // call int x = mypow(2,5);
     while (b > 0) {
         if (b & 1)
@@ -82,19 +75,67 @@ int mypow(int a, int b){        //(logn) fast exponentiation
         a = (a * a)%mod;
         b >>= 1;
     }
-	return (res%mod);
 }
 
 int32_t main(){	
 	__;
 	file();
-	$1
+	w(t){
+		int n,m; sd2(n,m);
+		int a[n][m];
+
+		rep(i ,0, n) rep(j ,0,m) sd(a[i][j]);
+		map<int,int>ma;
+		vi odd;
+		rep(i ,0 ,n) rep(j ,0, m) ma[a[i][j]]++;
+		int odd_count=0;
+
+		for(auto itr : ma)
+		{
+			if(itr.ss&1){
+				odd_count++;
+				odd.pb(itr.ff);
+				ma[itr.ff]--;
+			}
+		}
+
+		if(((m&1) and odd_count > n) || (odd_count!=0 and !(m&1))){
+			cout << -1 << endl;
+			continue;
+		}
+
+		auto itr = ma.begin();
+
+		for(int i=0 ; i<n ;i++){
+			for(int j=0 ; j<m/2 ; j++)
+			{
+				if(j != m-1-j){
+					while(itr->ss == 0) itr++;
+
+					a[i][j] = itr->ff;
+					a[i][m-j-1] = itr->ff;
+					itr->ss-=2;
+				}
+			}
+		}
+
+		for(auto itr : ma){
+			if(itr.ss != 0){
+				for(int j=0; j<itr.ss ; j++){
+					odd.pb(itr.ff);
+				}
+			}
+		}
+
+		if(m&1){
+			for(int i=0 ; i<n ; i++){
+				a[i][m/2]=odd[i];
+			}
+		}
+
+		rep(i ,0 ,n){
+			rep(j ,0 ,m) cout << a[i][j] << " ";
+			cout << endl;
+		}
+	}
 }
-
-]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>#</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<!-- <scope>source.python</scope> -->
-</snippet>
-

@@ -1,0 +1,18 @@
+
+
+Number of squares in NxN grid = summation(N^2);
+=> #(ways) to select 1x1 + #(ways) to select 2x2 + ....
+=> n*n + (n-1)*(n-1) + .......1*1
+=> n^2 + (n-1)^2 + ....1^2
+
+
+int32_t main(){	
+	__;
+	file();
+	int n;
+	while(cin>>n){
+		if(!n) return 0;
+		cout << (n*(n+1)*(2*n+1))/6 << endl;
+	}
+	return 0;
+}

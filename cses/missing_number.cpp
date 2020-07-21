@@ -1,14 +1,11 @@
-<snippet>
-	<content><![CDATA[
 #include<bits/stdc++.h>
 using namespace std;
-
 #define ff              first
 #define ss              second
 #define int             long long
 #define pb              push_back
 #define mp              make_pair
-#define ii              pair<int,int>
+#define pii              pair<int,int>
 #define vi              vector<int>
 #define mii             map<int,int>
 #define pqb             priority_queue<int>
@@ -28,7 +25,6 @@ using namespace std;
 #define m(a)		    memset(a,0,sizeof(a))
 #define all(x)                          begin(x), end(x)
 
-
 void fastscan(int &x){
 bool neg = false;register int c;
 x = 0;c = getchar();
@@ -38,8 +34,8 @@ if(neg){x *= -1;}}
 
 void file(){
 	#ifndef ONLINE_JUDGE
-	freopen("input.txt" , "r" , stdin);
-	freopen("output.txt" , "w" , stdout);
+	freopen("in.txt" , "r" , stdin);
+	freopen("out.txt" , "w" , stdout);
 	#endif
 }
 
@@ -65,7 +61,6 @@ int bs(int a[] , int s , int e, int x){
 #define deb(x) cout<<#x<<"="<<x<<endl
 #define deb2(x,y) cout<<#x<<"="<<x<<","<<#y<<"="<<y<<endl
 #define deb3(x,y,z) cout<<#x<<"="<<x<<","<<#y<<"="<<y<<","<<#z<<"="<<z<<endl
-#define deba(a) for(auto &x:a) cout<<x<<" ";
 
 #define sd(x) cin >> x;
 #define sd2(x,y) cin >> x >> y;
@@ -82,19 +77,25 @@ int mypow(int a, int b){        //(logn) fast exponentiation
         a = (a * a)%mod;
         b >>= 1;
     }
-	return (res%mod);
+    return (res%mod);
 }
 
+const int N = 2e5+5;
+int vis[N];
+	
 int32_t main(){	
 	__;
-	file();
-	$1
+//	file();
+	int n; sd(n);
+	for(int i=0 ; i<n-1 ; i++){
+		int x; sd(x); vis[x]=1;
+	}
+	for(int i=1; i<n+1 ; i++){
+		if(!vis[i]) cout << i << endl;
+	}
+	return 0;
 }
 
-]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>#</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<!-- <scope>source.python</scope> -->
-</snippet>
+
+
 
