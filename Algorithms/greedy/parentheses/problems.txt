@@ -1,4 +1,5 @@
+https://codeforces.com/blog/entry/69175?locale=en                                               ...take all problems/material from here..
+
 https://codeforces.com/contest/1374/problem/C
 https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27/0000000000209a9f       ...nesting depth (online qualifier round)
 https://www.codechef.com/ZCOPRAC/problems/ZCO12001
-https://codeforces.com/blog/entry/69175?locale=en                                               ...take all problems from here..
