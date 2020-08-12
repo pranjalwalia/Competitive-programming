@@ -1,0 +1,10 @@
+int x = 7, y = 4, z = 2;
+cout << ( x|y&z ) << endl;
+
+x = 5, y = 2, z = 5;
+cout << ( z&x<<y ) << endl;
+
+int a = 20, b = 2, c = 3, d = 1;
+cout << ( a>>b&c+d ) << endl;
+
+
