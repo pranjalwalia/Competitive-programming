@@ -130,4 +130,13 @@ int32_t main(){
 
 
 
+//add native library support 
+/*
+#include "window.h"
+using namespace_t;
 
+typedef struct window_t{
+	int n;
+};
+
+*/
