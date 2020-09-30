@@ -18,16 +18,6 @@ using namespace std;
 #define ps(x,y)         fixed<<setprecision(y)<<x
 #define mk(arr,n,type)  type *arr=new type[n];
 #define w(x)            int x; cin>>x; while(x--)
-#define pw(b,p)         pow(b,p) + 0.1
-
-void file(){	
-
-	ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
-	#ifndef ONLINE_JUDGE
-	freopen("input.txt" , "r" , stdin);
-	freopen("output.txt" , "w" , stdout);
-	#endif
-}
 
 int fib_itr(int x){				//all required values are computed only once
 	int f1=0;					// O(n)
