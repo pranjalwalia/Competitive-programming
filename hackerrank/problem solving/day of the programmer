@@ -29,7 +29,7 @@ int main(){
         printf("26.09.1918");
     }
     (y<1919) ? (out = julian(y)) : (out = georgian(y)); 
-
+    //The above and below lines are ternary operators, it is basically if else in a single line
     (out==1) ? (printf("12.09.%d" , y)) : (printf("13.09.%d" , y));
 
     return 0;
