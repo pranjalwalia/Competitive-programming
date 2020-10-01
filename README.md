@@ -9,34 +9,46 @@ Most of these codes are snipetts and library implementations, it is advisable to
 
 Find Me -- [My StopStalk Handle](https://www.stopstalk.com/user/profile/masterchief_01)
 
-[CODEFORCES](https://codeforces.com/profile/masterchief_01)![alt tag](https://sta.codeforces.com/s/58601/images/codeforces-vs-coronavirus-65.png)
+[CODEFORCES](https://codeforces.com/profile/masterchief_01)
+
+![alt tag](https://sta.codeforces.com/s/58601/images/codeforces-vs-coronavirus-65.png)
 
 Problem solutions from codeforces online platform.
 
 
-[Codechef](https://www.codechef.com/users/masterchief_01)![alt tag](https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Codechef%28new%29_logo.svg/320px-Codechef%28new%29_logo.svg.png)
+[Codechef](https://www.codechef.com/users/masterchief_01)
+
+![alt tag](https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Codechef%28new%29_logo.svg/320px-Codechef%28new%29_logo.svg.png)
 
 Solutions to problems from the online competitive programming platform codechef.
 The reposotory contains my solutions to various problems ranging across many difficulty levels.
 
 
-[Hackerrank](https://www.hackerrank.com/masterchief_01)  ![alt tag](https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/HackerRank_Icon-1000px.png/240px-HackerRank_Icon-1000px.png)
+[Hackerrank](https://www.hackerrank.com/masterchief_01) 
+
+![alt tag](https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/HackerRank_Icon-1000px.png/240px-HackerRank_Icon-1000px.png)
 
 
 The Hackerrank directory contains solutions for problems on Hackerrank - a competitive progrmming web platform.
 
 
-[AtCoder](https://atcoder.jp/users/masterchief_01)  ![alt tag](https://img.atcoder.jp/assets/atcoder.png)
+[AtCoder](https://atcoder.jp/users/masterchief_01)
+
+![alt tag](https://img.atcoder.jp/assets/atcoder.png)
 
 My submissions for Atcoder contests.
 
 
-[SPOJ](https://www.spoj.com/)  ![alt tag](https://stx1.spoj.com/gfx/2015e.png)
+[SPOJ](https://www.spoj.com/) 
+
+![alt tag](https://stx1.spoj.com/gfx/2015e.png)
 
 Solutions to problems from the Sphere Online Judge.
 
 
-[HackerEarth](https://www.hackerearth.com/@masterchief_01)  ![alt tag](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/HackerEarth_logo.png/240px-HackerEarth_logo.png)
+[HackerEarth](https://www.hackerearth.com/@masterchief_01) 
+
+![alt tag](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/HackerEarth_logo.png/240px-HackerEarth_logo.png)
 
 My submissions from the platform HackerEarth.
 
