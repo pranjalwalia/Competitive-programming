@@ -4,13 +4,13 @@
 #include<stdlib.h>
 
 int main(){
-    char* s = (char *)malloc(10240 * sizeof(char));
-    scanf("%s",s);
+    char* s = (char *)malloc(10240 * sizeof(char));   
+    scanf("%s",s);  //Taking string inputs
     int len = strlen(s);
     int columns = ceil(sqrt(len));
-    for(int i = 0; i < columns; i++) {
-        for(int j = i; j < len; j += columns) {
-            printf("%c", s[j]);
+    for(int i = 0; i < columns; i++) {    //iterating through columns
+        for(int j = i; j < len; j += columns) {   //iterating through strings
+            printf("%c", s[j]);        //printing the answer
         }
         printf(" ");
     }
