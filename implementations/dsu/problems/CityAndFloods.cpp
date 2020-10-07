@@ -1,19 +1,12 @@
-/*
- 	https://www.hackerearth.com/practice/data-structures/disjoint-data-strutures/basics-of-disjoint-data-structures/practice-problems/algorithm/city-and-flood-1/
-*/
+
+ 	//https://www.hackerearth.com/practice/data-structures/disjoint-data-strutures/basics-of-disjoint-data-structures/practice-problems/algorithm/city-and-flood-1/
+
 
 /* the problem is to basically find the number of commected components after k merge operations */
 
 /*	Author --> @Pranjal Walia   IIIT Bangalore  */
 #include<bits/stdc++.h>
 using namespace std;
-
-void fastscan(int &x){
-bool neg = false;register int c;
-x = 0;c = getchar();
-if(c=='-'){neg = true;c = getchar();}
-for(; (c>47 && c<58); c=getchar()){x = x *10 + c - 48;}
-if(neg){x *= -1;}}
 
 #define ff              				first
 #define ss              				second
