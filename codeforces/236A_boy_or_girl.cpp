@@ -13,7 +13,7 @@ int main(){
             count++;
         }
     }
-    if(count%2!=0){
+    if(count&1){
         cout << "CHAT WITH HER!" << endl;
     }
     else{
