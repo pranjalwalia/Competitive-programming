@@ -11,7 +11,7 @@
     
 5. Motivation Problem: Given an array having N integers, you need to find out a subsequence of K integers such that these K integers have the minimum hustle.
 Hustle of a sequence is defined as sum of pair-wise absolute differences divided by the number of pairs.
-For details on the statement, refer the problem link codeforces.com/problemset/problem/371/E
+For details on the statement, please refer the problem link codeforces.com/problemset/problem/371/E
  
  
  
