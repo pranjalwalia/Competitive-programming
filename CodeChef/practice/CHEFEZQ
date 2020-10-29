@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        long int n,k,i,ans;
+        int flag=0;
+        long long int sum=0;
+        cin>>n>>k;
+        long int ar[n];
+        for(i=0;i<n;i++)cin>>ar[i];
+        for(i=0;i<n;i++){
+            sum+=ar[i];
+            if(sum<k*(i+1))
+                {flag=1;ans=i+1;break;}
+        }
+        if(flag==1)
+        cout<<ans<<endl;
+        else{
+        ans=sum/k;
+        cout<<ans+1<<endl;}
+    }
+    return 0;
+}
