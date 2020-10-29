@@ -1,0 +1,66 @@
+#include<bits/stdc++.h>
+#define mod 1000000007
+using namespace std;
+
+int index(int A[], int N, int X, int P) 
+{
+    int minm = 100000000, min_index=0;
+    for(int k=0;k<N;k++)
+        if(A[k] == X) 
+        {
+            if(abs(P-k) < minm) 
+            {
+                minm = abs(P-k);
+                min_index = k;
+            }
+        }
+    return min_index;
+}
+
+void solve()
+{
+    int N, X,P,K;
+    cin >> N >> X >> P>> K;
+    int A[N];
+    for(int i=0;i<N;i++)
+    cin >> A[i];
+    sort(A,A+N);
+    int I = index(A, N, X, P);
+    int c = 0;
+    if(A[I]!=X)
+    {
+        A[K-1]=X;
+        sort(A,A+N);
+        c++;
+    }
+    if(A[P-1]==X) 
+    {
+        cout<<0+c;
+        return;
+    }
+    if(P<K&&A[P-1]<X) 
+    {
+        cout << -1;
+        return;
+    }
+    if(P>K&&A[P-1]>X) 
+    {
+        cout << -1;
+        return;
+    }
+    I=index(A,N,X,P)+1;
+    cout << abs(P-I)+c;
+        
+}
+
+int main() 
+{
+    int t;
+    cin >> t;
+    while(t--) 
+    {
+        solve();
+        cout << "\n";
+    } 
+    return 0;
+}
