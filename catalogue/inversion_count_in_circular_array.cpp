@@ -8,7 +8,7 @@ using namespace std;
 typedef long long lint;
 typedef pair<int, int> pi;
  
-int n, a[200005], p[200005];
+int n, a[2000], p[2000];
  
 int main(){
 	cin >> n;
