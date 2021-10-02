@@ -1,9 +1,3 @@
-package Templates.Java;
-/*
- * No package must be added here because some Online Judges don't support it
- * please remove, if any.
- * 
- */
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -52,7 +46,6 @@ public class Main {
 			
 			e.printStackTrace();
 		}
-		// Print the final output
 		System.out.println(output);
 	}
 
