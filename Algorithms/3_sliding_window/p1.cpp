@@ -39,7 +39,7 @@ void file(){
 	#endif
 }
 
-int bs(int a[] , int s , int e, int x){
+int binary_search(int a[] , int s , int e, int x){
 	if(s<=e){
 		int m = (s+e)/2;
 		if(a[m]==x)
@@ -79,27 +79,6 @@ int mypow(int a, int b){        //(logn) fast exponentiation
     }
     return (res%mod);
 }
-/*
-5
-8 6
-1 2 4 1 2 4 1 2
-5 3
-3 2 3 2 1
-10 4
-4 3 4 3 2 3 2 1 0 1
-15 7
-3 7 4 8 2 3 4 5 21 2 3 4 2 1 3
-7 5
-1 2 3 4 5 6 1
-
-3 2
-2 2
-2 1
-3 1
-2 3
-
-*/
-
 
 int32_t main(){	
 	__;
@@ -127,16 +106,3 @@ int32_t main(){
 	}
 	return 0;
 }
-
-
-
-//add native library support 
-/*
-#include "window.h"
-using namespace_t;
-
-typedef struct window_t{
-	int n;
-};
-
-*/
