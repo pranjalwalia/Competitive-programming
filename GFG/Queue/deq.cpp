@@ -33,14 +33,14 @@ public :
 	int getRear(); 
 }; 
 
-// Checks whether Deque is full or not. 
+// Checks whether Deque is full 
 bool Deque::isFull() 
 { 
 	return ((front == 0 && rear == size-1)|| 
 			front == rear+1); 
 } 
 
-// Checks whether Deque is empty or not. 
+// Checks whether Deque is empty 
 bool Deque::isEmpty () 
 { 
 	return (front == -1); 
