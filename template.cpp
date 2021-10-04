@@ -35,6 +35,6 @@ void trace(const char* names, T&& arg1, Args&&... args){
 const char* comma = strchr(names + 1, ',');cout.write(names, comma-names)<<" : "<<arg1<<" | ";trace(comma+1,args...);}
 
 
-int main(){ _
+int main(){ 
   
 }
