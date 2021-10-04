@@ -1,7 +1,8 @@
-/*	Author
+/*Author
 @ Pranjal Walia
 IIIT Bangalore
 */
+
 // https://www.hackerearth.com/problem/algorithm/connected-components-in-a-graph/description/
 #include<bits/stdc++.h>
 using namespace std;
