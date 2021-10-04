@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+
 #define ff              first
 #define ss              second
 #define int             long long
@@ -36,10 +37,10 @@ void file(){
 	#ifndef ONLINE_JUDGE
 	freopen("in.txt" , "r" , stdin);
 	freopen("out.txt" , "w" , stdout);
-	#endif
+#endif
 }
 
-int bs(int a[] , int s , int e, int x){
+int binary_search(int a[] , int s , int e, int x){
 	if(s<=e){
 		int m = (s+e)/2;
 		if(a[m]==x)
