@@ -91,7 +91,6 @@ int32_t main(){
     for(int i=0 ; i<v[n-1] ; i++){
         ans+=')';
     }
-   // cout << ans << endl;
     cout << "Case #" << tc <<  ": " << ans << endl;
     }
 }
