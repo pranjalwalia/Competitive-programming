@@ -79,3 +79,14 @@ int32_t main(){
   return 0;
  
 }
+int32_t main(){	
+	_;
+	string s;
+	cin >> s;
+	if(s[2] == s[3] && s[4]==s[5])
+		cout << "Yes" << endl;
+	else
+		cout << "No" << endl;	
+  return 0;
+ 
+}
