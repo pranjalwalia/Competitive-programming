@@ -9,14 +9,14 @@ int main(){
     int ss;
     char t[3];
     scanf("%d:%d:%d%s" , &hh, &mm , &ss , &t);
-    if(hh==12){
+    if(hh==12){    //Converting the hours from 12 hr format to 24hr format
         hh=0;
     }
     if(t[0]=='P'){
-        hh+=12;
+        hh+=12;     Adding 12 if it is PM
     }
     
-    printf("%02d:%02d:%02d" , hh , mm , ss);
+    printf("%02d:%02d:%02d" , hh , mm , ss);  //Prinitng the answer
     
 
 
